@@ -14,7 +14,7 @@ class MarkdownifyView(View):
     Conversion of Markdown to HTML.
     """
 
-    markdownify = import_string(MARKDOWNX_MARKDOWNIFY_FUNCTION)
+    markdownify = staticmethod(import_string(MARKDOWNX_MARKDOWNIFY_FUNCTION))
 
     def post(self, request, *args, **kwargs):
         """
